@@ -13,6 +13,26 @@ echo $app_version
 echo $app_author
 echo $app_last_update
 
+function gitinit(){
+	if [ -d .git ];
+	then
+	echo "Sí, sí existe."
+	echo "Data is exist in bin folder".	" [ ".$_hoy." ]"
+    echo "Data deploy is existed  OK ".	" [ "$_hoy" ]" >> testing.server.log
+    echo "Directorio de ./bin existe OK ".	" [ "$_pwd" ]" >> testing.server.log
+    echo "Directorio de ./bin OK ".	" [ "$_pwd" ]"
+	else
+	echo "No, no existe"
+	echo "File does not exist"
+	echo "Create Directory"
+	git init
+    echo "el repositorio se ha inicializado ".      " [ "$_pwd" ]" >> testing.server.log
+    git status      " [ "$_pwd" ]" >> testing.server.log
+    echo 'No olvides crear tu repositorio externo en un servidor seguro'
+    echo 'En caso de error revisar el archivo testing server con extension log'
+	fi
+}
+bin
 
 
 gitignore() {
