@@ -14,6 +14,28 @@ echo $app_author
 echo $app_last_update
 
 
+
+gitignore() {
+gitignore=./.gitignore
+if [ ! -f "$servicio" ];
+then
+    echo "File does not exist sh"
+    echo 'bin' > .gitignore
+    echo '*.log' >> .gitignore
+    echo '*.ini' >> .gitignore
+
+    echo 'Create .gitignore file finish OK'
+else
+
+    echo 'Debes agregar al gitignore datos importante por 
+    favor verifica su estado para no crear codigo
+    o cambios basura en el git '$_fecha
+fi
+}
+gitignore
+echo 'Listo el proceso de instalación del servicio de autoguardado se ha terminado'
+
+
 function bin(){
 	if [ -d bin ];
 	then
