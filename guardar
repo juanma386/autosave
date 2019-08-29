@@ -32,18 +32,33 @@ function bin(){
 }
 bin
 
-funtion server() {
+servicio() {
 servicio=./bin/autosave.sh
-if [ ! -e "$servicio" ];
+if [ ! -f "$servicio" ];
 then
     echo "File does not exist sh"
     echo "Download sh deployer to system_".		"[".$_hoy."]"
     curl -o bin/autosave.sh https://raw.githubusercontent.com/juanma386/autosave/master/autosave.sh
-    echo 'bin' > .gitignore
     echo 'Downloading finish OK'
 else
-./bin/autosave.sh
+comando
 fi
 }
-server
-echo 'Listo el aplicativo de autoguardado ha terminado'
+servicio
+echo 'Listo el proceso de instalación del servicio de autoguardado se ha terminado'
+
+comando() {
+comando=./usr/bin/guardar
+if [ ! -f "$comando" ];
+then
+    echo "File does not exist sh"
+    sudo -v
+    sudo mv ./bin/guardar /usr/bin/guardar
+    echo 'ahora solo ejecutas guardar y se realizara el guardado automatico'
+    echo 'tambien puedes automatizar el proceso con cron'
+else
+echo 'esto es un else
+fi
+}
+comando
+echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
