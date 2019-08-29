@@ -63,5 +63,5 @@ else
 echo 'esto es un else'
 fi
 }
-comando
+
 echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
