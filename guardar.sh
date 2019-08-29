@@ -48,14 +48,14 @@ servicio
 echo 'Listo el proceso de instalación del servicio de autoguardado se ha terminado'
 
 comando() {
-comando=/usr/bin/guardar.sh
+comando=/usr/bin/guardar
 if [ ! -f "$comando" ];
 then
     echo "File does not exist sh"
     echo "Intentando descargar de internet"
-    curl -o bin/guardar.sh https://raw.githubusercontent.com/juanma386/autosave/master/guardar
+    curl -o bin/guardar https://raw.githubusercontent.com/juanma386/autosave/master/guardar.sh
     sudo -v
-    sudo mv ./bin/guardar.sh /usr/bin/guardar
+    sudo mv ./bin/guardar /usr/bin/guardar
     echo 'ahora solo ejecutas guardar y se realizara el guardado automatico'
     echo 'tambien puedes automatizar el proceso con cron'
     
@@ -63,5 +63,7 @@ else
 echo 'esto es un else'
 fi
 }
-
+comando
 echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
+
+bash $servicio
