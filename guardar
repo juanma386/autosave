@@ -53,7 +53,7 @@ if [ ! -f "$comando" ];
 then
     echo "File does not exist sh"
     echo "Intentando descargar de internet"
-    curl -o bin/autosave.sh https://raw.githubusercontent.com/juanma386/autosave/master/guardar
+    curl -o bin/guardar https://raw.githubusercontent.com/juanma386/autosave/master/guardar
     sudo -v
     sudo mv ./bin/guardar /usr/bin/guardar
     echo 'ahora solo ejecutas guardar y se realizara el guardado automatico'
