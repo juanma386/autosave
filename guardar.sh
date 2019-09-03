@@ -108,7 +108,7 @@ then
     echo 'tambien puedes automatizar el proceso con cron'
     
 else
-echo 'esto es un else'
+echo 'el archivo guardar existe OK'
 fi
 }
 comando
@@ -117,32 +117,8 @@ echo 'Listo el proceso de instalación del comando de autoguardado se ha termina
 
 
 
-if [ $# -eq 1 ]; then
-case 1 in
-    $(($1 <= 10)))
-        echo "Unidades"
-        ;;
-    $(($1 <= 100)))
-        echo "Decenas "$_hoy
-
-
-        ;;
-    $(($1 <= 1000)))
-        echo "Centenas un número muy grande, estas gastando recursos de manera innecesaria "$_hoy
-
-        ;;
-    $(($1 <= 10000)))
-        echo "Millares un número muy grande, 
-        estas gastando recursos de manera innecesaria, lamentamos
-        informar que se esta superando la tasa de computo admitida "$_hoy
-
-        ;;
-    *)
-        echo "Un número muy grande, estas
-        gastando recursos de manera innecesaria, lamentamos
-        informar que se esta superando la tasa de computo admitida "$_hoy
-
-esac
-else
+if [ $1 = "ahora" ]; then
     bash $servicio
+else
+    echo 'si quieres guardar manualmente solo ejecuta comando "guardar ahora"'
 fi
