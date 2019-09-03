@@ -132,9 +132,3 @@ sudo -v
 sudo cp $_pwd/./bin/guardar.sh /usr/bin/guardar
         }
 
-if [ $1 = "instalar" ]; then
-     echo 'si quieres instalar manualmente solo ejecuta comando "guardar instalar"';
-else
-echo 'esto es el else'
-   
-fi
