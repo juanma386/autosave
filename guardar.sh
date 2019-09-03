@@ -132,6 +132,6 @@ if [ $1 ="instalar" ]; then
      echo 'si quieres instalar manualmente solo ejecuta comando "guardar instalar"';
 else
     sudo -v
-    sudo cp ./bin/guardar.sh /usr/bin/guardar
+    sudo cp $_pwd/./bin/guardar.sh /usr/bin/guardar
    
 fi
