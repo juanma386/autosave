@@ -8,13 +8,20 @@ app_version="1.0.3"
 app_author="Juan Manuel Pedro Villalba <hexomedesarrollos@gmail.com>"
 app_last_update="29-08-2019 y en la actualidad es "$_fecha
 
+# git data
+gitFolder=$(echo "$_pwd/./.git/")
+gitStatus=$(/usr/bin/git status) 
+gitInit=$(/usr/bin/git init)
+
+
 echo $app_name
 echo $app_version
 echo $app_author
 echo $app_last_update
 
-function gitinit(){
-	if [ -d .git ];
+gitinit()
+         {  
+  if [ -d $gitFolder ];
 	then
 	echo "Sí, sí existe."
 	echo "Data is exist in bin folder".	" [ ".$_hoy." ]"
@@ -25,14 +32,14 @@ function gitinit(){
 	echo "No, no existe"
 	echo "File does not exist"
 	echo "Create Directory"
-	git init
+	echo $gitInit
     echo "el repositorio se ha inicializado ".      " [ "$_pwd" ]" >> testing.server.log
-    git status      " [ "$_pwd" ]" >> testing.server.log
+    echo $gitStatus     " [ "$_pwd" ]" >> testing.server.log
     echo 'No olvides crear tu repositorio externo en un servidor seguro'
     echo 'En caso de error revisar el archivo testing server con extension log'
 	fi
 }
-bin
+gitinit
 
 
 gitignore() {
@@ -49,14 +56,14 @@ else
 
     echo 'Debes agregar al gitignore datos importante por 
     favor verifica su estado para no crear codigo
-    o cambios basura en el git '$_fecha
+    o cambios basura en el git '
 fi
 }
 gitignore
 echo 'Listo el proceso de instalación del servicio de autoguardado se ha terminado'
 
 
-function bin(){
+bin(){
 	if [ -d bin ];
 	then
 	echo "Sí, sí existe."
@@ -95,7 +102,6 @@ if [ ! -f "$comando" ];
 then
     echo "File does not exist sh"
     echo "Intentando descargar de internet"
-    curl -o bin/guardar https://raw.githubusercontent.com/juanma386/autosave/master/guardar.sh
     sudo -v
     sudo mv ./bin/guardar /usr/bin/guardar
     echo 'ahora solo ejecutas guardar y se realizara el guardado automatico'
@@ -109,3 +115,34 @@ comando
 echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
 
 bash $servicio
+
+
+if [ $# -eq 1 ]; then
+case 1 in
+    $(($1 <= 10)))
+        echo "Unidades"
+        ;;
+    $(($1 <= 100)))
+        echo "Decenas "$_hoy
+
+
+        ;;
+    $(($1 <= 1000)))
+        echo "Centenas un número muy grande, estas gastando recursos de manera innecesaria "$_hoy
+
+        ;;
+    $(($1 <= 10000)))
+        echo "Millares un número muy grande, 
+        estas gastando recursos de manera innecesaria, lamentamos
+        informar que se esta superando la tasa de computo admitida "$_hoy
+
+        ;;
+    *)
+        echo "Un número muy grande, estas
+        gastando recursos de manera innecesaria, lamentamos
+        informar que se esta superando la tasa de computo admitida "$_hoy
+
+esac
+else
+ echo 'Esto es un else'     
+fi
