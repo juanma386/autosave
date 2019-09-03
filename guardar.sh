@@ -114,7 +114,7 @@ fi
 comando
 echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
 
-bash $servicio
+
 
 
 if [ $# -eq 1 ]; then
@@ -144,5 +144,5 @@ case 1 in
 
 esac
 else
- echo 'Esto es un else'     
+    bash $servicio
 fi
