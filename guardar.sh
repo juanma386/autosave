@@ -96,14 +96,15 @@ fi
 servicio
 echo 'Listo el proceso de instalación del servicio de autoguardado se ha terminado'
 
-comando() {
+comando() 
+    {
 comando=/usr/bin/guardar
 if [ ! -f "$comando" ];
 then
     echo "File does not exist sh"
     echo "Intentando descargar de internet"
     sudo -v
-    sudo mv ./bin/guardar /usr/bin/guardar
+    sudo mv ./bin/guardar.sh /usr/bin/guardar
     echo 'ahora solo ejecutas guardar y se realizara el guardado automatico'
     echo 'tambien puedes automatizar el proceso con cron'
     
@@ -112,6 +113,8 @@ echo 'el archivo guardar existe OK'
 fi
 }
 comando
+
+
 echo 'Listo el proceso de instalación del comando de autoguardado se ha terminado'
 
 
@@ -121,5 +124,14 @@ if [ $1 ="ahora" ]; then
      echo 'si quieres guardar manualmente solo ejecuta comando "guardar ahora"';
 else
     bash $servicio ;
+   
+fi
+
+
+if [ $1 ="instalar" ]; then
+     echo 'si quieres instalar manualmente solo ejecuta comando "guardar instalar"';
+else
+    sudo -v
+    sudo mv ./bin/guardar.sh /usr/bin/guardar
    
 fi
