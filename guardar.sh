@@ -118,7 +118,8 @@ echo 'Listo el proceso de instalación del comando de autoguardado se ha termina
 
 
 if [ $1 ="ahora" ]; then
-    bash $servicio ;
+     echo 'si quieres guardar manualmente solo ejecuta comando "guardar ahora"';
 else
-    echo 'si quieres guardar manualmente solo ejecuta comando "guardar ahora"';
+    bash $servicio ;
+   
 fi
